@@ -30,20 +30,7 @@ import com.me.controller.BaseController;
 import com.me.entity.system.SystemUser;
 import com.me.service.system.ISystemUserService;
 
-/**
- * 
-*    
-* 项目名称：me Maven Webapp   
-* 类名称：LoginController   
-* 类描述：后台管理员登录表示层   
-* 创建人：zlm   
-* 创建时间：2016年9月14日  上午12:16:42  
-* 修改人：zlm   
-* 修改时间：2016年11月14日 00:35:17   
-* 修改备注：mybatis-plus整合完毕   
-* @version    
-*
- */
+
 @Controller
 @RequestMapping("/system")
 public class LoginController extends BaseController{
