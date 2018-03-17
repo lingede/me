@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.me.dao.platform.TeamteacherMapper">
+
+	<!-- 通用查询结果列-->
+	<sql id="Base_Column_List">
+		id, teamid, teacherid, sortby
+	</sql>
+	
+	
+	<select id="selectAllTeacherByTeam" resultType="Teacher">
+		SELECT
+			m.id,
+			m.username,
+			m.`password`,
+			m.`name`,
+			m.title,
+			m.teamTitle,
+			m.tel,
+			m.email,
+			m.Team_id AS teamId,
+			m.biography,
+			m.profilePic,
+			m.researchField,
+			m.academic,
+			m.studentTraining,
+			m.reserve1,
+			m.reserve2,
+			t.sortby
+		FROM
+			teacher m,
+			teamteacher t
+		WHERE
+			t.teamid = #{teamId}
+		AND t.teacherid = m.id
+		order by t.sortby 
+	</select>
+</mapper>

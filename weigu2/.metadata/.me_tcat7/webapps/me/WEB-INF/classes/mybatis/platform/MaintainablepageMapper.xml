@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.me.dao.platform.MaintainablepageMapper">
+
+	<!-- 通用查询结果列-->
+	<sql id="Base_Column_List">
+		id, Category_id AS categoryId, title, content, numOfRead, createTime
+	</sql>
+	
+	<select id="selectBycategory" resultType="java.lang.Integer">
+		SELECT
+			count(1)
+		FROM
+			maintainablepage m
+		WHERE
+			m.Category_id = #{categoryid}
+	</select>
+
+</mapper>

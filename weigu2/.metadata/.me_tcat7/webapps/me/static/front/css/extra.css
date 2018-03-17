@@ -1,0 +1,16 @@
+.newsPart {height:22px;width:100%; line-height:22px;}
+.newsPart .leftPart {width:460px;float:left;}
+.newsPart .leftPart .newsStar{float:left;padding-left:4px;}
+.newsPart .leftPart .newsLine{max-width:410px;float:left;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
+.newsPart .leftPart .newsUpdate{padding-left:8px;}
+.newsPart .rightPart {width:56px;float:left;text-align:center}
+
+.newsView {padding:0; width:100%;float:left;line-height:20px; font-size:14px;line-height:30px;font-size:14px;}
+.newsView  .leftPart {float:left;width:88%;}
+.newsView .leftPart  .newsStar {float:left;padding:0 10px;}
+.newsView .leftPart  .zhiding{color:red;float:left; padding-right:6px;font-size:12px;line-height:32px;}
+.newsView .leftPart  .newsLine {color:#494949;float:left;max-width:460px;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;display:inline-block;float:left;}
+.newsView .leftPart  .newsUpdate{display:inline-block; vertical-align:top;padding-left:6px;}
+.newsView .rightPart {width:90px;float:left;text-align:center; font-size:12px;color:#494949;}
+
+.lineEllipsis { overflow:hidden; text-overflow:ellipsis; white-space:nowrap;width:100%;display:inline-block;}

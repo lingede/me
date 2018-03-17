@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.me.dao.platform.ThemeMapper">
+
+	<!-- 通用查询结果列-->
+	<sql id="Base_Column_List">
+		id, `name`, `path`, systeminfo_id AS systeminfoId
+	</sql>
+	
+	<!-- 根据条件查询主题 -->
+	<select id="selectAllTheme" resultType="Theme" parameterType="Theme">
+		SELECT * FROM theme
+		<where>
+			<if test="name != null and name !=''">
+				name LIKE '%' #{name} '%' OR name LIKE '%' #{name} '%'
+			</if>
+		</where>
+	</select>
+	
+	<!-- 根据ID采用轮播主题 -->
+	<update id="applyThisTheme" parameterType="int">
+		UPDATE me.theme SET me.theme.is_apply = 1 WHERE me.theme.id =#{id}
+	</update>
+	
+	<!-- 将除了此ID以外的行的is_aaply字段置0 -->
+	<update id="resetTheme" parameterType="int">
+		UPDATE me.theme SET me.theme.is_apply = 0 WHERE me.theme.id !=#{id}
+	</update>
+	
+	
+</mapper>

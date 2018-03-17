@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+		<meta content="image/mediaDefault01.png" itemprop="image">
+	
+		<title></title>
+	
+		<meta name="renderer" content="webkit">
+		<link rel="stylesheet" type="text/css" href="css/global.css">
+		<link rel="stylesheet" type="text/css" href="css/copyright.css">
+		
+		<script type="text/javascript" src="js/jquery-1.11.0-min.js"></script>
+		<script type="text/javascript" src="js/common/dropMenu.js"></script>
+    	<script type="text/javascript" src="js/slideMenu.js"></script>
+	<script>
+	$(function() {
+		var height = $("#main").css("height");
+		$("#body").css({
+			"height" : height
+		});
+		$('#Banner_simple').allinone_thumbnailsBanner({
+			skin : 'simple',
+			numberOfThumbsPerScreen : 5,
+			width : 543,
+			height : 350,
+			thumbsReflection : 0,
+			defaultEffect : 'fade'
+		});
+		dropMenu(".drop-menu-effect");
+	})
+</script>
+	</head>
+	<body>
+		
+		<div id="logo">
+					<a href="http://www.me.uestc.edu.cn/"><img src="image/logo.png"></a>
+				</div>
+	
+				<div id="navBar">
+					<ul>
+						<li class="dropEffect">
+							<a href="http://www.me.uestc.edu.cn/">首页</a>
+						</li>
+						<li class="dropEffect" style="background: white;">
+							<a href="http://www.me.uestc.edu.cn/list?type=25"><span>学院概况</span></a>
+							<ul class="submenu" style="display: block; padding-top: 0px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px; height: 0px;">
+								<li><a href="http://www.me.uestc.edu.cn/list?type=25">学院简介</a></li>
+								<li><a href="http://www.me.uestc.edu.cn/list?type=26">领导简介</a></li>
+								<li><a href="http://www.me.uestc.edu.cn/list?type=27">办公向导</a></li>
+								<li><a href="http://www.me.uestc.edu.cn/list?type=78">风采展示</a></li>
+							</ul>
+						</li>
+						<li class="dropEffect" style="background: white;">
+							<a href="http://www.me.uestc.edu.cn/list?type=14"><span>师资队伍</span></a>
+							<ul class="submenu" style="display: block; padding-top: 0px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px; height: 0px;">
+								<li style="background: white;"><a href="http://www.me.uestc.edu.cn/list?type=14">院士</a></li>
+								<li><a href="http://www.me.uestc.edu.cn/list?type=15">人才计划</a></li>
+								<li><a href="http://www.me.uestc.edu.cn/list?type=16">教授(研究员等)</a></li>
+								<li><a href="http://www.me.uestc.edu.cn/list?type=17">副教授(副研究员等)</a></li>
+								<li><a href="http://www.me.uestc.edu.cn/list?type=18">讲师(工程师及以下)</a></li>
+								<li><a href="http://www.me.uestc.edu.cn/list?type=37">人事政策</a></li>
+								<li><a href="http://www.me.uestc.edu.cn/list?type=66">资料下载</a></li>
+							</ul>
+						</li>
+						<li class="dropEffect" style="background: white;">
+							<a href="http://www.me.uestc.edu.cn/list?type=39"><span>人才培养</span></a>
+							<ul class="submenu" style="display: block; padding-top: 0px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px; height: 0px;">
+								<li style="background: white;"><a href="http://www.me.uestc.edu.cn/list?type=39">招生简章</a></li>
+								<li><a href="http://www.me.uestc.edu.cn/list?type=40">本科教育</a></li>
+								<li><a href="http://www.me.uestc.edu.cn/list?type=41">硕博培养</a></li>
+								<li><a href="http://www.me.uestc.edu.cn/list?type=42">继续教育</a></li>
+								<li><a href="http://www.me.uestc.edu.cn/list?type=43">工程硕士</a></li>
+							</ul>
+						</li>
+						<li class="dropEffect" style="background: white;">
+							<a href="http://www.me.uestc.edu.cn/list?type=12"><span>科研学术</span></a>
+							<ul class="submenu" style="display: block; padding-top: 0px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px; height: 0px;">
+								<li style="background: white;"><a href="http://www.me.uestc.edu.cn/list?type=12">学术看板</a></li>
+								<li><a href="http://www.me.uestc.edu.cn/list?type=13">科研团队</a></li>
+								<li><a href="http://www.me.uestc.edu.cn/list?type=61">学科建设</a></li>
+								<li><a href="http://www.me.uestc.edu.cn/list?type=62">科研政策</a></li>
+								<li><a href="http://www.me.uestc.edu.cn/list?type=64">资料下载</a></li>
+								<li><a href="http://222.197.183.68/business/login.jsp">科研管理系统</a></li>
+								<li><a href="http://www.me.uestc.edu.cn/list?type=76">国资和安全管理</a></li>
+							</ul>
+						</li>
+						<li class="dropEffect" style="background: white;">
+							<a href="http://www.me.uestc.edu.cn/list?type=44"><span>国际交流</span></a>
+							<ul class="submenu" style="display: block; padding-top: 0px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px; height: 0px;">
+								<li><a href="http://www.me.uestc.edu.cn/list?type=44">教师出境</a></li>
+								<li><a href="http://www.me.uestc.edu.cn/list?type=46">学生出境</a></li>
+								<li><a href="http://www.me.uestc.edu.cn/list?type=47">留学ME</a></li>
+								<li><a href="http://www.me.uestc.edu.cn/list?type=65">来华专家</a></li>
+								<li><a href="http://www.me.uestc.edu.cn/list?type=73">国际会议</a></li>
+								<li><a href="http://www.me.uestc.edu.cn/list?type=74">资料下载</a></li>
+								<li><a href="http://www.me.uestc.edu.cn/list?type=75">国际组织</a></li>
+								<li><a href="http://www.me.uestc.edu.cn/list?type=80">出访公示</a></li>
+							</ul>
+						</li>
+						<li class="dropEffect" style="background: white;">
+							<a href="http://www.me.uestc.edu.cn/list?type=49"><span>示范性微电子学院</span></a>
+							<ul class="submenu" style="display: block; padding-top: 0px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px; height: 0px;">
+								<li style="background: white;"><a href="http://www.me.uestc.edu.cn/list?type=49">学院简介</a></li>
+								<li><a href="http://www.me.uestc.edu.cn/list?type=50">人才培养</a></li>
+								<li><a href="http://www.me.uestc.edu.cn/list?type=51">招生信息</a></li>
+								<li><a href="http://www.me.uestc.edu.cn/list?type=52">对外交流</a></li>
+								<li><a href="http://www.me.uestc.edu.cn/list?type=71">人才招聘</a></li>
+							</ul>
+						</li>
+						<li class="dropEffect" style="background: white;">
+							<a href="http://www.me.uestc.edu.cn/list?type=53"><span>专题链接</span></a>
+							<ul class="submenu" style="display: block; padding-top: 0px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px; height: 0px;">
+								<li><a href="http://www.me.uestc.edu.cn/list?type=53">钧业班</a></li>
+								<li><a href="http://www.me.uestc.edu.cn/list?type=54">“微梦”党建</a></li>
+								<li><a href="http://www.me.uestc.edu.cn/list?type=79">视觉识别系统</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				
+				<script type="text/javascript">
+			$('.dropEffect ul, #choiceList, #announceList>li').hide();
+			$('#announceList #0').show();
+			$('.dropEffect').hover(
+				function(){
+					$(this).children('ul').stop().slideDown(200);
+				},function(){
+					$(this).children('ul').stop().slideUp(200);
+				}
+			);
+		</script>
+		
+		<script type="text/javascript" src="js/slideMenu.js"></script>
+	</body>
+</html>

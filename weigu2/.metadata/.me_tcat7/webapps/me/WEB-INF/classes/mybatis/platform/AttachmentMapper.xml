@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.me.dao.platform.AttachmentMapper">
+
+	<!-- 通用查询结果列-->
+	<sql id="Base_Column_List">
+		id, MaintainablePage_id AS maintainablepageId, Article_id AS articleId, `path`, info, uploadTime, numOfDownload
+	</sql>
+    <!-- 查询所有审核文章 -->
+    <select id="attachmentList" resultType="Attachment"  parameterType="Attachment">
+        SELECT
+        	t.ARTICLE_ID,t.PATH,t.INFO,t.uploadTime,t.numOfDownload,t.id as id,a.title
+        FROM
+            attachment t
+        LEFT JOIN 
+            article a ON t.ARTICLE_ID = a.ID 
+        WHERE
+		    1=1
+		ORDER BY
+		t.uploadTime DESC
+    </select>
+    
+    <!-- 根据articleID查询附件信息 -->
+    <select id="selectByArticleId" resultType="java.util.Map">
+    	SELECT
+			a.info,
+			a.path
+		FROM
+			attachment a
+		WHERE
+			a.Article_id = #{articleId}
+    </select>
+</mapper>

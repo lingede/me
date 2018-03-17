@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.me.dao.platform.TeamMapper">
+
+	<!-- 通用查询结果列-->
+	<sql id="Base_Column_List">
+		id, username, `password`, `name`, researchDirection, teamMember, researchField, academic, studentTraining, cooperator, address, reserve1, reserve2, numOfMember, sortby
+	</sql>
+	
+	<!-- 根据查找条件查找所有管理员 -->
+	<select id="selectAllTeam" resultType="Team" parameterType="Team">
+		SELECT
+			<include refid="Base_Column_List"/>
+        FROM
+            team
+		<where>
+			<if test="username != null and username !=''">
+				AND (username LIKE '%' #{username} '%' OR name LIKE '%' #{username} '%')
+			</if>
+			<if test="id != null and id !=''">
+				AND id = #{id}
+			</if>
+		</where>
+    </select>
+    
+    <!-- 查询所有团队 -->	
+    <select id="selectTeam" resultType="java.util.Map">
+    	SELECT
+			t.id,
+			t.`name`
+		FROM
+			team t
+    </select>
+</mapper>

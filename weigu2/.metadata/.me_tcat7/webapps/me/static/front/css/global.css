@@ -1,0 +1,8 @@
+﻿* {margin: 0; padding: 0;}
+* img{border:none;}
+form input{border:none;}
+body {font-family: "微软雅黑"; height: 100%;}
+a {text-decoration: none;}
+.clear {clear: both; height: 0;}
+input:focus {outline: none;}
+li {list-style: none;}

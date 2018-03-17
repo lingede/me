@@ -1,0 +1,352 @@
+body {
+	background: #ecf0f1;
+}
+
+/*=================showBox=======================*/
+/*showBox*/
+.showContainer {
+	background: #fff;
+	height: 410px;
+	width: 1184px;
+}
+.showBox {
+	overflow: hidden;
+	position: relative;
+	margin: 0 auto;
+	padding-top: 10px;
+	width: 1160px;
+	height: 400px;
+	background: #fff;
+}
+.showBox>a {
+	display: inline-block;
+	position: absolute;
+	z-index: 10;
+	top: 182px;
+	width: 40px;
+	height: 46px;
+	background: url(../image/trans-black-70.png);
+	text-align: center;
+	line-height: 46px;
+	font-size: 40px;
+	color: #ccc;
+	border-radius: 4px;
+}
+a.slidePrev {
+	left: -40px;
+}
+a.slideNext {
+	right: -40px;
+}
+.slidePage {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	z-index: 11;
+	font-size: 14px;
+	padding: 3px;
+	background: url(../image/trans-black-70.png);
+	border-radius: 5px;
+	box-shadow: 0 0 2px #222;
+}
+.slidePage a {
+	display: block;
+	float: left;
+	margin: 1px;
+	padding: 3px 7px;
+	color: #ccc;
+	border-radius: 5px;
+}
+.slidePage a:hover {
+	color: #fff;
+}
+.slidePage a.activeSlide {
+	background: #eee;
+	color: #222;
+}
+.slideBox {
+	position: absolute;
+	z-index: 10;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 30px;
+	padding: 10px;
+	color: #fff;
+	background: url(../image/trans-black-70.png);
+}
+.slideBox .data {
+	padding-left: 20px;
+	color: #ccc;
+}
+.slideBox .data h4 {
+	color: #fff;
+	font: bold 20px arial, sans-serif;
+	padding: 0;
+}
+.slideBox .data a {
+	color: #fff;
+}
+#slide {
+	height: 400px;
+    position: relative;
+    width: 900px;
+}
+.slideItem {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 4;
+}
+/*==============content===============*/
+#content{
+	margin:0 auto;
+	padding:10px 0;
+	width:1184px;
+	font-size: 12px;
+}
+
+#content a {
+	color:#2a2a2a;
+}
+
+#content a:hover {
+	color: red;
+}
+
+#leftSide{
+	position:relative;
+	width:810px;
+	float:left;
+}
+#rightSide{
+	position:relative;
+	width:365px;
+	height:570px; /*475px;*/
+	float:right;
+	background:#fff;
+}
+
+#leftSide #focus>p, #rightSide>p {
+	position:relative;
+	background:#8c1616;
+	font-size:14px;
+	height:40px;
+	color:#fff;
+	clear:both;
+}
+#leftSide #news>p, #leftSide #academic>p{
+	position:relative;
+	background:#8c1616;
+	font-size:14px;
+	height:40px;
+	color:#fff;
+	margin-bottom:10px;
+	clear:both;
+}
+
+#leftSide #focus p a, #leftSide #news p a, #leftSide #academic p a, #rightSide>p a{
+	position:absolute;
+	bottom:2px;
+	right:0;
+	font-size:12px;
+	line-height:20px;
+	text-align:center;
+	width:71px;
+	height:24px;
+	background-image:url('../image/more.png');
+}
+#leftSide #news p a, #leftSide #academic p a {
+	color: #8c1616;
+}
+#leftSide #focus p a, #rightSide>p a {
+	color: #8c1616;
+}
+#leftSide #focus p span, #leftSide #news p span, #leftSide #academic p span {
+	position: relative;
+	top: -15px;
+}
+#focus>div{
+	position:relative;
+	width:263px;
+	height:220px;
+	background-color:#a95657;
+	float:left;
+	margin-top:10px;
+}
+#focus>div>a img{
+	width:194px;
+	height:129px;
+	background:#555;
+	position:absolute;
+	float:left;
+	border:none;
+}
+#focus>div>p{
+	width:71px;
+	float:right;
+	font-size:25px;
+	color: white;
+	position:relative;
+	top:25px;
+	line-height:37px;
+	text-align:center;
+}
+#focus .abstract{
+	position:relative;
+	top: 55px;
+	width:253px;
+	height:90px;
+	font-size:12px;
+	color:black;
+	background-color: white;
+	padding:2px 5px;
+	overflow:hidden;
+}
+#focus .abstract h4{
+	font-size: 14px;
+	font-weight: bold;
+	margin-top: 2px;
+}
+#focus .abstract p{
+	font-size:12px;
+	margin-top: 8px;
+	color: #4e4e4e;
+}
+
+/*================= news ===================*/
+#news{
+	width:536px;
+	background-color:#fff;
+	clear:both;
+	float:left;
+	margin-top:10px;
+}
+#news table *,#academic table *,#announceList *,#{color:#111;}
+#news .table{
+	width:516px;
+	height:220px;
+	margin:15px auto;
+	overflow:hidden;
+}
+#news .table table tr{
+	height:20px;
+	font-size:12px;
+}
+
+#news table td div{
+	overflow: hidden;
+	width:100%;
+	height:20px;
+	line-height:20px;
+}
+#news>table tr,#academic>table tr{line-height:25px;}
+/*=================== academic =====================*/
+#academic{
+	width:263px;
+	background-color:#fff;
+	float:right;
+	margin-top:10px;
+}
+#academic .table{
+	width:248px;
+	height:220px;
+	margin:15px auto;
+	overflow:hidden;	
+}
+#academic .table tr{
+line-height:21px;
+font-size:12px;
+}
+/*=============== guide ==================*/
+
+#guide{
+	background:#d8d7d5;
+	clear:both;
+	margin:10px auto;
+	padding:10px 0;
+	width: 1185px;
+}
+#guide #hot{
+	width:394px;
+	margin-left:50px;
+}
+
+#guide #school{
+	width:155px;
+	margin-left:140px;
+}
+#guide #department{
+	width:155px;
+	margin-left:140px;
+}
+
+/*================= choiceList ======================*/
+
+#choiceList{
+	width:90px;
+	height: 470px;
+	position:absolute;
+	top:40px;
+	background:#8c1616;
+	overflow:hidden;
+}
+#choiceList li{
+	float:left;
+	width:100%;
+	text-align:center;
+	height:39px;
+	line-height:39px;
+	vertical-align:middle;
+}
+#choiceList li a{display:block;color:#fff;}
+#choiceList li a:hover{color: #fff}
+/*================== announceList =========================*/
+
+#announceList{
+	position:relative;
+	height:455px;/*435px;*/
+	padding-bottom:10px;
+	margin-bottom: 10px; 	
+	z-index:5;
+}
+
+#announceList>li{
+	position:absolute;
+	height:460px;
+	width: 335px;
+	overflow:hidden;
+	margin-top:4px;
+	padding:0 15px;
+}
+#announceList>li>ul>li{
+	float:left;
+	width:100%;
+	height:22px;
+	line-height:22px;
+	font-size:12px;
+	overflow:hidden;
+}
+#announceList>li>ul>li>p{
+	float:left;
+}
+#announceList>li>ul>li>span{
+	float: right;
+}
+
+/*================ navLeft ================*/
+#navLeft{
+	position:absolute;
+	left:0;top:0;
+	z-index:10;
+}
+#navLeft>span{
+	width:90px;
+	height:40px;
+	text-align:center;
+	line-height:40px;
+	color:#fff;
+	display:block;
+}
+
+#navLeft>span{font-size:14px;}

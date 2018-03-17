@@ -1,0 +1,416 @@
+#articleEdit{
+	width:1000px;
+	margin:0 auto;
+	padding-bottom:40px;
+	margin-bottom:40px;
+	border-bottom:#5f5f5f 2px solid;
+}
+
+	#editHeader{
+			width:1000px;
+			height:36px;		
+		}
+
+		#editHeader img{
+			float:left;
+			display:inline-block;
+			margin-top:5px;
+		}
+
+		#editHeader #categoryName{
+			float:left;
+			color:black;
+			font-size:16px;
+			margin-left:10px;
+			margin-top:8px;
+			height:40px;
+		}
+
+		#editHeader #position{
+			float:right;
+			color:black;
+			font-size:12px;
+			margin-top:10px;
+			margin-right:10px;
+		}
+
+		#position>span{
+			font-weight:800;
+		}
+
+
+
+		#poste{
+			width:1000px;;
+			height:650px;
+			margin-top:40px;
+		}
+
+		#poste table{	
+			font-family:"Microsoft YaHei";
+			font-size:14px;
+		}
+
+		#poste table .label{
+			text-align:left;
+			width:80px;
+		}
+
+		#poste table tr{
+			height:40px;
+		}
+
+		#poste table #authorTd{
+			width:220px;
+		}
+
+		#poste table #emailTd{
+			width:343px;
+		}
+
+		#poste table #sourceTd{
+			width:200px;
+		}
+
+		#poste input{
+			height:24px;
+			border:1px #494949 solid;
+		}
+
+		#author{
+			width:100px;
+		}
+
+		#email{
+			width:247px;
+	//		margin-left:30px;
+		}
+
+		#source{
+			width:100px;
+	//		margin-left:30px;
+		}
+
+		#poste select{
+			display:block-inline;
+			height:25px;
+			width:250px;
+			margin-right:10px;
+			border:1px #494949 solid;
+		}
+
+		#poste #title{
+				width:828px;
+			}
+
+
+		#editArea{
+			margin-bottom:40px;
+		}
+
+		.attachmentArea{
+			border-bottom:2px solid #5F5F5F;
+			padding-top:10px;
+			padding-bottom:20px;
+			font-size:16px;
+			font-family:"Microsoft YaHei";
+			width:1000px;
+			height:300px;
+		}
+
+		#files tr{
+			border-bottom:dashed 1px #5F5F5F;
+			line-height:200%;
+		}
+		
+		.deleteArea{
+			text-align:right;
+		}
+
+		.deleteArea a{
+			text-decoration:none;
+			color:#00549c;
+		}
+
+		.deleteArea a:hover{
+			color:red;
+		}
+
+		.hide{
+			display:none;
+		}
+
+		#submitArea{
+			/*margin-top:40px;*/
+			padding-left:300px;
+			margin-bottom:20px;
+		}
+
+		#submitArea a{
+			margin-left:50px;
+			color:white;
+		}
+
+		.whiteButton{
+				padding-bottom:2px;
+				border:1px solid #BCBCBC;
+				background:#F0F0F0;
+				font-size:14px;
+				font-family:"Microsoft YaHei";
+
+    			-moz-box-shadow:2px 2px 0px #D3D3D3;
+    			-webkit-box-shadow:2px 2px 0px #D3D3D3;
+    			 box-shadow:2px 2px 0px #D3D3D3;
+			}
+		
+		#delete1{
+			padding-left:2px;
+			padding-right:2px;
+		}
+
+		#delete2{
+			padding-left:2px;
+			padding-right:2px;
+		}
+
+		.submitButton{
+			padding-left:40px;
+			padding-right:40px;
+			padding-top:10px;
+			padding-bottom:10px;
+			background-color:#515151 !important;
+		}
+
+		.imgMain{
+			width:1000px;
+			height:300px;
+		}
+
+		.imgFooter{
+			clear:both;
+			text-align:right;
+			color:#5F5F5F;
+			font-size:28px;
+			font-family:"Microsoft YaHei";
+			padding-right:10px;
+			border-bottom:2px solid #5F5F5F;
+		}
+
+		#attachmentHeader{
+			clear:both;
+			text-align:left;
+			color:#5F5F5F;
+			font-size:28px;
+			font-family:"Microsoft YaHei";
+		}
+
+		#imgMain{
+			height:350px;
+		}
+
+		.controlArea{
+			width:550px;
+			height:160px;
+			float:left;
+			padding-left:50px;
+		}
+
+		.file-box {
+                position:relative;
+                width:100%;
+            }
+            .txt {
+                height:22px;
+                border:1px solid #cdcdcd;
+                width:180px;
+            }
+            .btn {
+                background-color:#5F5F5F;
+				margin-right:5px;
+                border:0px solid;
+                height:35px;
+				color:white;
+                width:120px;
+                border-radius:10px;
+                font-size:16px;
+				font-family:"Microsoft YaHei";
+				cursor:pointer;
+            }
+            .file {
+                position:absolute;
+                top:0;
+                right:395px;
+                height:35px;
+                filter:alpha(opacity:0);
+                opacity: 0;
+                width:51s0px;
+				cursor:pointer;
+            }
+
+		.controlArea p{
+			font-family:"Microsoft YaHei";
+			margin-bottom:15px;
+			margin-top:15px;
+		}
+
+
+		.selected{
+			border:1px solid red;
+		}
+
+		.imgRotate{
+			height:104px;
+			width:400px;
+			float:left;
+			position:relative;
+			overflow: hidden;
+			margin-top:30px;
+		}
+
+		.imgRotate img{
+			width:120px;
+			height:100px;
+			cursor:pointer;
+		}
+
+		.imgRotate ul{
+			height:100px;
+			width:10000px;
+			position:absolute;
+			left:0;
+		}
+
+		.imgRotate ul li{
+			height:100px;
+			width:120px;
+			padding:0;
+			margin-right:20px;
+			float:left;
+		}
+
+		.preview{
+			width:400px;
+			height:250px;
+			float:left;
+			padding:0;
+			margin:0;
+		}
+
+		.preview img{
+		/*	width:460px;
+			height:297px;*/
+			max-height:250px;
+			max-width:400px;
+			margin:0 auto;
+			display:block;
+		}
+
+		#pre{
+			cursor:pointer;
+			float:left;
+			height:100px;
+			margin-right:10px;
+			margin-left:10px;
+			margin-top:30px;
+		}
+
+	    	
+		
+		#preview_box{
+			float:right;
+		}
+
+		#imgDescribe{
+			float:left;
+		}
+
+		#imgDescribe p{
+			font-family:"Microsoft YaHei";
+			font-size:16px;
+			margin-bottom:15px;
+		}
+
+		#next{
+			cursor:pointer;
+			float:left;
+			height:100px;
+			margin-left:10px;
+			margin-top:30px;
+		}
+
+		#attachmentControl{
+			float:left;
+			width:510px;
+			height:200px;
+		}
+		#attachmentControl p{
+			margin-bottom:30px;
+		}
+
+		#uploadedAttachment{
+			float:right;
+			width:400px;
+			height:200px;
+		}
+
+		#uploadedAttachment p{
+			text-align:right;
+			display:block;
+			height:30px;
+			font-size:16px;
+			color:#5F5F5F;
+			border-bottom:dashed 1px #5F5F5F;
+		}
+		#uploadedAttachment p a{
+			margin-left:300px;
+			color:#567EC6;
+		}
+
+		#uploadedAttachment p a:hover{
+			color:red;
+		}
+
+		.scrollButton{
+			display:block;
+			padding-top:45px;
+			padding-bottom:45px;
+			padding-left:3px;
+			width:20px;
+
+			background:#E8E8E8;
+			-moz-border-radius:0 0 3px 3px;
+    		-webkit-border-radius:0 0 5px 5px;
+   		 	border-radius:0 0 3px 3px;
+    		-moz-box-shadow:0 5px 5px #D3D3D3;
+    		-webkit-box-shadow:0 5px 5px #D3D3D3;
+    		box-shadow:0 5px 5px #D3D3D3;
+		}
+		
+		.attachementText{
+			display:inline-block;
+			width:350px;
+			overflow:hidden;
+			text-overflow:ellipsis;
+			white-space:nowrap;
+			margin:0;
+		}
+
+
+		#control{
+			padding-left:190px;
+		}
+
+		#delete1{
+				*position:relative;
+				*top:-3px;
+		}
+		#delete2{
+				*position:relative;
+				*top:-3px;
+		}
+
+		#add{
+			*position:relative;
+			*top:-3px;
+		}
+

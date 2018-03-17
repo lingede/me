@@ -1,0 +1,164 @@
+body {
+	background: #ecf0f1;
+	color: #494949;
+}
+
+#newsContent td {
+	border: 1px solid #333;
+	padding: 0 10px;
+}
+
+#newsContent table {
+    border-collapse: collapse;
+}
+
+/*==========content==========*/
+#content{
+	margin: 30px auto 0;
+	padding:10px 0;
+	width:1065px;
+	font-size: 12px;
+	overflow: hidden;
+}
+
+#newsList {
+	float: left;
+}
+
+#newsList h2 {
+	width: 175px;
+	margin-bottom: 15px;
+	text-align: center;
+	font-size: 18px;
+	font-weight: normal;
+}
+
+#newsList ul {
+	padding-top: 25px;
+	padding-bottom: 5px;
+	font-size: 14px;
+	background-color: #eb974e;
+}
+
+#currentTitle a[href]{
+	background-color: #ecf0f1;
+	color: #eb974e;
+}
+
+#newsList a:hover{
+	background-color: #ecc4a0;
+	color: #ecf0f1;
+}
+
+#newsList a {
+	display: block;
+	width: 175px;
+	padding: 10px 0;
+	text-align: center;
+	color: white;
+}
+
+/*================newsBox===============*/
+#newsBox {
+	float: right;
+}
+
+#newsBox p {
+	padding-top: 5px;
+	margin-bottom: 17px;
+	color: black
+}
+
+#newsBox a {
+	color: black;
+}
+
+/*================newsMain===============*/
+#article {
+	width: 865px;
+	background: white;
+	padding-top: 30px;
+	min-height: 763px;
+}
+
+#newsTitle {
+	border-bottom: solid #bdc3c7 2px;
+}
+
+#newsTitle h2 {
+	text-align: center;
+	font-size: 18px;
+	font-weight: normal;
+}
+
+#newsTitle>div {
+	text-align: center;
+	margin: 20px 0;
+}
+
+#newsTitle h3 {
+	display: inline;
+	margin-right: 50px;
+	font-size: 14px;
+	font-weight: normal;
+}
+
+#newsContent {
+	margin: 20px 0;
+	padding: 0 35px;
+	border-bottom: solid #bdc3c7 2px;
+}
+
+#newsContent p {
+	line-height: 24px;
+	font-size: 14px;
+	color: #494949;
+}
+
+#attachment {
+	margin: 30px 0 0;
+	padding: 0 35px 30px;
+	border-bottom: solid #bdc3c7 2px;
+	overflow: hidden;
+}
+
+#attachment>div {
+	width: 680px;
+	float: right;
+}
+
+#attachment>div a {
+	display: block;
+	font-size: 14px;
+	line-height: 32px;
+	color: #494949;
+	text-decoration: underline;
+}
+
+#preAndNext {
+	margin: 10px 0;
+	padding: 0 35px;
+	overflow: hidden;
+}
+
+#preAndNext p {
+	display: inline;
+	line-height: 32px;
+}
+
+#pre {
+	float: left;
+}
+
+#next {
+	float: right;
+}
+
+.frame960 {
+	position: relative;
+	margin: 0 auto;
+	width: 544px;
+	height: 462px;
+
+}
+

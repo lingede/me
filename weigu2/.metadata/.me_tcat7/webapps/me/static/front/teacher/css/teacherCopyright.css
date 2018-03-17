@@ -1,0 +1,152 @@
+/*search*/
+#search {
+	height: 95px;
+	background-color: #8c1616;
+	width:100%;
+	min-width:1250px;
+}
+
+#search a {
+	color: white;
+	font-size: 12px;
+}
+
+#search div {
+	width: 1145px;
+	height: 50px;
+	margin: 0 auto;
+}
+
+
+#service {
+	margin: 14px 0;
+	float: left;
+}
+
+#service li {
+	float: left;
+	list-style: none;
+	margin-right: 55px;
+}
+
+#search form {float:right; position: relative; height: 50px; width: 390px; top: 22px;}
+#text {
+	width: 300px;
+	padding: 6px 8px; 
+	margin: 11px 0;
+	background-color: white;
+	color: #030303;
+	border-radius: 14px;
+}
+#submit {
+	position: absolute;
+	left: 290px;
+	top: 15px;
+	height: 20px;
+	width: 19px;
+	background:url(../../image/searchBtn.png) no-repeat;
+	cursor: pointer;
+}
+
+#searchArea a { 
+	position: absolute;
+	left: 335px;
+	top: 15px;
+}
+
+/*=================header=======================*/
+
+#headBg{
+	position:absolute;
+	width:100%;
+	min-width:1250px;
+	height:546px;
+	max-height:546px;
+}
+
+#advSHeadBg{
+	position:absolute;
+	width:100%;
+	min-width:1250px;
+	height:166px;
+	max-height:166px;
+}
+
+#hMiddle{
+	position:relative;					
+	width:1184px;
+	min-width:1184px;
+	margin:0 auto;
+}
+
+#logo {
+	margin: 12px;
+}
+
+
+/*=================navBar=======================*/
+
+.dropEffect:hover{
+	background-color:rgba(0,0,0,0.2);
+	background-color:white;
+}
+#currentPage{background-color:white;}
+
+#navBar>ul{
+	font-size:14px;
+	height:40px;
+	background-color:#d8d7d5;
+	background-color:rgba(216, 215, 213, 0.8);
+	z-index:10;
+}
+.dropEffect{
+	float:left;
+	width:147px;
+	height: 40px;
+	line-height: 30px;
+	border-right: 1px solid white;
+}
+.dropEffect:last-child{border:none;}
+.dropEffect a{
+	display:block;
+	text-align:center;padding:5px 0;color:#2a2a2a;
+}
+.dropEffect>ul li{
+	position:relative;
+	width:100%;
+	background-color:#d8d7d5;
+	background-color:rgba(216, 215, 213, 0.9);
+	float:left;
+	z-index:12;
+}
+.dropEffect>ul li:hover{background-color:white;}
+.dropEffect>ul{
+	position:relative;
+	width:148px;
+	height:0;
+	overflow:hidden;
+	z-index:13;
+}
+
+
+/*footer*/
+/* #footer {
+	height: 80px;
+	background-color: #8c1616;
+	width:100%;
+	min-width:1250px;
+}
+
+#footer div {
+	position: relative;
+	top: 10px;
+	width: 500px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#footer p {
+	line-height: 32px;
+	color: white;
+	font-size: 12px;
+} */

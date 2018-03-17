@@ -1,0 +1,181 @@
+table tbody tr td p img {
+background-color: rgb(255, 255, 255);
+font-weight: bold;
+height: 160px;
+text-align: center;
+width: 120px;
+}
+
+body {background: #ecf0f1;}
+body>div {
+	width: 980px; 
+	margin: 10px auto; 
+	padding: 15px 10px;
+	background: white;
+}
+body table {
+	margin: 0 auto;
+	border-spacing: 5px;
+}
+
+/*========header===========*/
+#header {
+	height: 200px;
+	position: relative;
+}
+
+#teamName {
+	position: relative;
+	height: 100px;
+	background: #2b353f;
+}
+
+#teamName h1 {
+	position: relative;
+	width:980px;
+	top: 50px;
+	text-align:center;
+	color: white;
+	font-size: 30px;
+	font-weight: normal;
+}
+
+#teamName a {
+	position: absolute;
+	top: 70px;
+	left: 885px;
+	color: white;
+	font-size: 12px;
+}
+
+#introduction {
+	height: 60px;
+	background: #181d21;
+	padding-top: 40px;
+	
+}
+
+#introduction div {
+	text-align: center;
+}
+
+#introduction p {
+	display: inline;
+	color: white;
+	font-size: 14px;
+}
+
+/*=======position========*/
+#position {
+	height: 28px;
+	padding-top: 12px;
+	margin: 5px 0;
+	background: #e09000;
+	font-size: 12px;
+}
+
+#position p {
+	margin-left: 50px;
+	color: white;
+}
+
+#position a {
+	color: white;
+}
+
+/*======content==========*/ 
+#content {
+	overflow: hidden;
+	background: #181d21;
+	border-bottom: solid 5px white;
+	position: relative;
+}
+
+#contentList {
+	width: 210px;
+	height: 600px;
+	background-color: #181d21;
+	float: left;
+}
+
+#contentList li {
+	width: 210px;
+	height: 55px;
+	border-bottom: solid 2px white;
+}
+
+.selected {
+	background: #727b7c;
+}
+
+#contentList li h2 {
+	width: 160px;
+	height: 40px;
+	padding-top: 15px;
+	padding-left: 50px;
+	font-size: 14px;
+	font-weight: normal;
+	color: white;
+	cursor: pointer;
+}
+
+.contentArea {
+	float: right;
+	width: 745px;
+	min-height: 560px;
+	padding: 20px 10px;
+	border-left: solid 5px white;
+	background: white;
+}
+
+.teacher {
+	margin-right: 10px;
+}
+
+.teacher span {
+	display: none; 
+}
+
+.contentArea>p a {
+	color: black;
+}
+
+.contentArea>p a:hover {
+	text-decoration: underline;
+}
+
+/*=========footer=========*/
+#footer {
+	/*height: 45px;*/
+	background: #e09000; 
+	width:100%;
+	min-width:980px;
+}
+.images_content
+			{
+				width:96%;
+				display:block;
+				margin:0 auto;
+			}
+			.images_1_of_5 
+			{
+				width:139px;
+				padding:10px 2px;
+				float:left;
+			}
+			.images_1_of_5  p
+			{
+				text-align:center;
+				line-height:15px;
+				font-size:15px;
+			}
+			.images_1_of_5  a{
+				line-height:28px;
+			}
+			.images_1_of_5 img
+			{
+				display:block;
+				width:130px;
+				height:172px;
+			}
+			.contentArea p {line-height:26px; font-size:14px;}

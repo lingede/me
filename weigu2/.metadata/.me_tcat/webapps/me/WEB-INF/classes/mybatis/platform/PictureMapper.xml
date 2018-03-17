@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.me.dao.platform.PictureMapper">
+
+	<!-- 通用查询结果列-->
+	<sql id="Base_Column_List">
+		id, Rotator_id AS rotatorId, MaintainablePage_id AS maintainablepageId, Article_id AS articleId, `path`, info, uploadTime, sortby
+	</sql>
+	
+	<!-- 查询所有picture并关联rotator与article -->
+	<select id="selectAllPicture" resultMap="getPicture" parameterType="PictureUnion">
+		SELECT r.id as 'Rotator_id',p.`id` AS id,r.`id` AS r_id,a.`id` AS a_id,p.`path`,p.`info`,a.`title` AS a_title,r.`title` AS r_title FROM picture p LEFT JOIN rotator r
+		ON p.`Rotator_id` = r.`id`
+		LEFT JOIN article a
+		ON p.`Article_id` = a.`id`
+		<where>
+			<if test="article != null">
+				a.`title` like '%'  #{article.title}  '%'
+			</if>
+		</where>
+	</select>
+	
+	<!-- 更新图片描述 -->
+	<update id="updatePictrueInfo" parameterType="Picture">
+		UPDATE picture SET info = #{info} WHERE id=#{id}
+	</update>
+	
+	<!-- 根据picture的id查询单个picture -->
+	<select id="selectPictureByID" parameterType="int" resultType="Picture">
+		select * from picture where id = #{id}
+	</select>
+	
+	<!-- 根据picture的外键rotatorId查找rotator -->
+	<select id="selectRotatorByID" parameterType="int" resultType="Rotator">
+		SELECT * FROM rotator WHERE id=#{id}
+	</select>
+	
+	<resultMap id="getPicture" type="PictureUnion">
+		<id property="id" column="id"></id>
+		<result property="maintainablepageId" column="MaintainablePage_id"/>
+		<result property="path" column="path"/>
+		<result property="info" column="info"/>
+		<result property="uploadTime" column="uploadTime"/>
+		<result property="sortby" column="sortby"/>
+		<result property="rotatorId" column="Rotator_id"/>
+		<result property="articleId" column="Article_id"/>
+		<association property="article" javaType="Article">
+			<id property="id" column="a_id"></id>
+			<result property="title" column="a_title"/>
+			<result property="titleimg" column="titleimg"/>
+			<!-- <result property="content" column="content"/>
+			<result property="createTime" column="createTime"/>
+			<result property="author" column="author"/>
+			<result property="email" column="email"/>
+			<result property="source" column="source"/>
+			<result property="numOfRead" column="numOfRead"/> -->
+		</association>
+		<association property="rotator" javaType="Rotator">
+			<id property="id" column="r_id"></id>
+			<result property="title" column="r_title"/>
+			<!-- <result property="description" column="description"/>
+			<result property="url" column="url"/>
+			<result property="sequence" column="sequence"/>
+			<result property="backgroundColor" column="backgroundColor"/> -->
+		</association>
+	</resultMap>
+	
+      <!-- 根据新闻ID查找图片 -->
+	    <select id="selectByArticle" resultType="Picture">
+	    
+	   	    SELECT
+				id, Rotator_id AS rotatorId, MaintainablePage_id AS maintainablepageId, Article_id AS articleId, path, info, uploadTime, sortby
+	        FROM
+	            picture
+			where 
+	    Article_id=#{aid}
+	    </select>
+	        
+	    <!-- 根据rotator_id查询picture -->
+	    <select id="selectPictureByRotatorID" resultMap="getPicture" parameterType="int">
+			SELECT r.id as 'Rotator_id',p.`id` AS id,r.`id` AS r_id,a.`id` AS a_id,p.`path`,p.`info`,a.`title` AS a_title,r.`title` AS r_title,p.sortby FROM picture p LEFT JOIN rotator r
+			ON p.`Rotator_id` = r.`id`
+			LEFT JOIN article a
+			ON p.`Article_id` = a.`id`
+			where p.`Rotator_id` = #{id}
+		</select>
+		
+		<!-- 根据ID删除picture -->
+		<delete id="deletePicture" parameterType="int">
+			DELETE from picture where picture.id=#{id}
+		</delete>
+		
+		<!-- 根据ID更新picture的rotatorID与sortby -->
+		<update id="updateSortbyAndrotatorID" parameterType="Picture">
+			UPDATE picture set Rotator_id = #{rotatorId},sortby = #{sortby} WHERE id=#{id}
+		</update>
+
+	    <!-- 加入图片信息 -->
+	    <insert id="updateByAID" parameterType="Picture">
+	    insert into picture (Article_id,path,info,uploadTime) values(#{articleId},#{path},#{info},#{uploadTime})
+	    </insert>
+	    
+</mapper>

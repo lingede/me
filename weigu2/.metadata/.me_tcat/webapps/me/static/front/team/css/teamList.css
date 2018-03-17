@@ -1,0 +1,49 @@
+#rightBox {
+	width: 765px;
+	height: 878px;
+	padding: 45px 50px 20px;
+	background-color: white;
+}
+
+#middleList{
+	width:668px;
+	height:100%;
+	margin:0 auto;
+	font-size:13px;
+}
+
+#middleList>p{margin-left:240px;}
+#middleList #leftList{
+	float:left;
+	width:302px;
+	height:848px;
+	background-image:url('../image/teamListLeft.png');
+	background-position:left;
+	background-repeat:no-repeat;
+}
+
+#leftList ul{
+	margin-top:22px;
+	line-height:65px;
+}
+#rightList ul{
+	margin-top:32px;
+	line-height:65px;
+}
+#middleList #rightList{
+	float:left;
+	width:366px;
+	height:848px;
+	background-image:url('../image/teamListRight.png');
+}
+#rightList{margin-top:5px;}
+#leftList li{
+	text-align:right;
+	padding-right:97px;
+}
+#rightList li{
+	text-align:left;
+	padding-left:103px;
+}
+
+#newsList ul{height:913px;}

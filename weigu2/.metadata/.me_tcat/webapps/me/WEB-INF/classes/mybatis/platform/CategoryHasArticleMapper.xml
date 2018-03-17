@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.me.dao.platform.CategoryHasArticleMapper">
+
+	<!-- 通用查询映射结果 -->
+	<sql id="Base_Column_List">
+		ID,ARTICLE_ID AS articleId, CATEGORY_ID AS categoryId,ID AS
+		id, STATE AS state,
+		ISTOP AS isTop,TOPDEADLINE AS
+		topDeadline,PUBLISHTIME AS publishTime
+	</sql>
+	<!-- 查询所有审核文章 -->
+	<select id="selectArticle" resultType="CategoryHasArticle"
+		parameterType="CategoryHasArticle">
+		SELECT
+		c.ARTICLE_ID articleId,
+		c.STATE,
+		c.CATEGORY_ID categoryId,
+		a.AUTHOR,
+		a.TITLE,
+		a.TITLEIMG titleimg,
+		a.CREATETIME,
+		g.CATEGORY_ID firstCategory,
+		CONCAT(t. NAME, "=>", g. NAME) AS NAME,
+		C.ID AS id
+		FROM
+		category_has_article c
+		LEFT JOIN article a ON c.ARTICLE_ID = a.ID
+		LEFT JOIN category g ON c.CATEGORY_ID = g.ID
+		LEFT JOIN category t ON
+		g.CATEGORY_ID = t.ID
+		WHERE
+		c.STATE = #{state}
+		ORDER BY
+		c.ISTOP
+		DESC,a.CREATETIME DESC;
+	</select>
+	<!-- 按ID查询 -->
+	<select id="preview" resultType="CategoryHasArticle">
+		SELECT
+		c.Article_id articleId,
+		c.state,
+		c.Category_id categoryId,
+		g.CATEGORY_ID firstCategory,
+		a.author,
+		a.title,
+		a.content,
+		a.TITLEIMG titleimg,
+		a.createtime,
+		g.name cname,
+		t.name fname,
+		c.id
+		FROM
+		category_has_article c
+		LEFT JOIN article a ON
+		c.Article_id = a.id
+		LEFT JOIN category g ON c.CATEGORY_ID = g.ID
+		LEFT JOIN category t ON
+		g.CATEGORY_ID = t.ID
+		WHERE
+		c.id = #{id};
+	</select>
+	<!-- 发布 -->
+	<!-- 获取type和id -->
+	<select id="getTypeId" resultType="com.me.vo.platform.RTypeAndIDVO">
+		SELECT
+		Article_id articleId,
+		Category_id type
+		FROM
+		category_has_article 
+		WHERE
+		Article_id = #{articleId};
+	</select>
+	<update id="updstate">
+		update
+		category_has_article
+		set
+		STATE=1
+		where ID=#{id}
+	</update>
+	<!-- 回退 -->
+	<update id="upstate">
+		update
+		category_has_article
+		set
+		STATE=2
+		where ID=#{id}
+	</update>
+	<!-- 预览 -->
+
+	<!-- 置顶 -->
+	<update id="toTop">
+		update
+		category_has_article
+		set
+		ISTOP=1
+		where ID=#{id} 
+	</update>
+	<!-- 取消置顶 -->
+	<update id="ntoTop">
+		update
+		category_has_article
+		set
+		ISTOP=0
+		where ID!=#{id}
+	</update>
+	<!-- 取消发布 -->
+	<update id="cancel">
+		update
+		category_has_article
+		set
+		STATE=0
+		where ID=#{id}
+	</update>
+	<!-- 修改新闻内容 -->
+	<update id="updateArticle" parameterType="CategoryHasArticle">
+		update
+		category_has_article c
+		LEFT JOIN article a ON c.ARTICLE_ID = a.ID
+		set
+		a.CONTENT=#{content},
+		a.title=#{title},
+		a.titleimg=#{titleimg},
+		c.Category_id=#{categoryId}
+		where c.ID=#{id}
+	</update>
+	<!-- 取焦点新闻条数 -->
+	<select id="focusNews" resultType="com.me.vo.platform.FocusNewsVO">
+		SELECT
+		c.Article_id articleId,
+		c.Category_id type,
+		a.title title,
+		a.titleimg titleimg,
+		a.content content,
+		a.createTime createTime,
+		c.publishTime publishTime
+		FROM
+		category_has_article c
+		LEFT JOIN article a ON a.id = c.Article_id
+		WHERE
+		c.Category_id = 11 AND c.STATE=1
+		ORDER BY
+		c.isTop DESC,
+		c.publishTime DESC
+		LIMIT 0,
+		3
+	</select>
+	<!-- 获取综合新闻 -->
+	<select id="generalNews" resultType="com.me.vo.platform.FocusNewsVO">
+		SELECT
+		c.Article_id
+		articleId,
+		c.Category_id type,
+		a.title,
+		a.titleimg,
+		a.content,
+		a.createTime,
+		c.publishTime
+		FROM
+		category_has_article c
+		LEFT JOIN article a ON a.id =
+		c.Article_id
+		WHERE
+		c.Category_id = 10 AND c.STATE=1
+		ORDER BY
+		a.createTime DESC
+		LIMIT 0,
+		10
+	</select>
+
+	<!-- 学术看板 -->
+	<select id="scienceBoard" resultType="com.me.vo.platform.FocusNewsVO">
+		SELECT
+		c.Article_id
+		articleId,
+		c.Category_id type,
+		a.title,
+		a.titleimg,
+		a.content,
+		a.createTime,
+		c.publishTime
+		FROM
+		category_has_article c
+		LEFT JOIN article a ON a.id =
+		c.Article_id
+		WHERE
+		c.Category_id = 12 AND c.STATE=1
+		ORDER BY
+		a.createTime DESC
+		LIMIT 0,
+		5
+	</select>
+	<!-- 信息公告 -->
+	<select id="information" resultType="com.me.vo.platform.FocusNewsVO">
+		SELECT
+		c.Article_id articleId,
+		c.Category_id type,
+		a.title,
+		a.titleimg,
+		a.content,
+		a.createTime,
+		c.publishTime,
+		g.name
+		FROM
+		category_has_article c
+		LEFT JOIN article a ON a.id = c.Article_id
+		LEFT JOIN category g ON c.Category_id = g.id
+		WHERE
+		g.Category_id = 3 AND c.STATE=1
+		ORDER BY
+		a.createTime DESC
+		LIMIT 0,
+		21
+	</select>
+
+</mapper>

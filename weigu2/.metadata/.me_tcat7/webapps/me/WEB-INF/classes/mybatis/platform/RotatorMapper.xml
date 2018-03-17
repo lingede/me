@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.me.dao.platform.RotatorMapper">
+
+	<!-- 通用查询结果列-->
+	<sql id="Base_Column_List">
+		id, title, description, url, `sequence`, backgroundColor
+	</sql>
+	
+	<!-- 根据查找条件查找所有轮播主题 -->
+	<select id="selectAllRotator" resultType="Rotator" parameterType="Rotator">
+		SELECT
+			<include refid="Base_Column_List"/>
+        FROM
+            rotator
+		<where>
+			<if test="title != null and title !=''">
+				AND (title LIKE '%' #{title} '%' OR title LIKE '%' #{title} '%')
+			</if>
+		</where>
+		ORDER BY id
+    </select>
+    
+    <!-- 根据ID查询轮播主题 -->
+     <select id="selectRotatorsByID" resultType="com.me.entity.platform.Rotator" parameterType="int">
+		SELECT * FROM rotator where id=#{id}
+	</select>
+    
+     <!-- 查找所有轮播主题 -->
+    <select id="selectAllRotators" resultType="com.me.entity.platform.Rotator">
+		SELECT * FROM rotator
+	</select>
+	
+	<!-- 插入轮播主题 -->
+	<insert id="insertOneRotator" parameterType="com.me.entity.platform.Rotator">
+		INSERT into me.rotator(title,description,sequence) VALUES(#{title},#{description},0)
+	</insert>
+	
+	<!-- 根据ID删除轮播主题 -->
+	<delete id="deleteRatatorByID" parameterType="int">
+		DELETE FROM me.rotator where me.rotator.id=#{id}
+	</delete>
+	
+	<!-- 根据ID查找轮播主题 -->
+    <select id="selectRotatorByID" resultType="com.me.entity.platform.Rotator" parameterType="int">
+		SELECT * FROM rotator where me.rotator.id = #{id}
+	</select>
+	
+	<!-- 根据ID采用轮播主题 -->
+	<update id="applyThisRotator" parameterType="int">
+		UPDATE me.rotator SET me.rotator.sequence = 1 WHERE me.rotator.id =#{id}
+	</update>
+	
+	<!-- 将除了此ID以外的行的sequence置0 -->
+	<update id="resetRotator" parameterType="int">
+		UPDATE me.rotator SET me.rotator.sequence = 0 WHERE me.rotator.id !=#{id}
+	</update>
+	
+	<!-- 根据Rotator的id查询picture -->
+	<select id="selectPictureByID" parameterType="int" resultType="Picture">
+		select * from picture where Rotator_id = #{id}
+	</select>
+	
+	<!-- 根据id查询picture -->
+	<select id="selectSinglePictureByID" parameterType="int" resultType="Picture">
+		select * from picture where id = #{id}
+	</select>
+	
+	<!-- 根据ID更新picture的sortby -->
+	<update id="updateSortBy" parameterType="picture">
+		UPDATE picture SET sortby=#{sortby} WHERE id=#{id}
+	</update>
+	<!-- 前台轮播信息 -->
+	<select id="frontRotator" resultType="com.me.vo.platform.RotatorFrontVO">
+	SELECT
+	r.title,
+	r.id,
+	r.sequence,
+	r.description,
+	p.Rotator_id rotatorId,
+	p.Article_id articleId,
+	p.path
+FROM
+	rotator r
+LEFT JOIN picture p ON r.id = p.Rotator_id
+where r.sequence=1
+ORDER BY
+	p.sortby;
+	</select>
+	
+		<select id="oneRotator" resultType="com.me.vo.platform.RotatorFrontVO" parameterType="java.lang.Integer" >
+	SELECT
+	r.title,
+	r.id,
+	r.sequence,
+	r.description,
+	p.Rotator_id rotatorId,
+	p.Article_id articleId,
+	p.path
+FROM
+	rotator r
+LEFT JOIN picture p ON r.id = p.Rotator_id
+where r.id=#{rotatorId}
+ORDER BY
+	p.sortby;
+	</select>
+</mapper>

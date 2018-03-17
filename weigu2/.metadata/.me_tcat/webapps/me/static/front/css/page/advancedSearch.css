@@ -1,0 +1,174 @@
+#advancedSearch{
+	width:1000px;
+	height:580px;
+	margin:0 auto;
+	border-bottom:#00549c 4px solid;
+}
+
+		#searchHeader{
+			width:1000px;
+			height:36px;
+			background:url(../../images/title_bg.jpg) repeat-x;
+			
+		}
+
+		#searchHeader img{
+			float:left;
+			display:inline-block;
+			margin-top:5px;
+		}
+
+		#searchHeader #categoryName{
+			float:left;
+			color:black;
+			font-size:16px;
+			margin-left:10px;
+			margin-top:8px;
+			height:40px;
+		}
+
+		#searchHeader #position{
+			float:right;
+			color:black;
+			font-size:12px;
+			margin-top:10px;
+			margin-right:10px;
+		}
+
+		#position>span{
+			font-weight:800;
+		}
+
+		#searchInfo{
+			height:140px;
+			width:1000px;
+			background:#F5F5F5;
+			margin:0 auto;
+			margin-top:20px;
+			padding-top:20px;
+		}
+
+		#message{
+			color:red;
+			font-size:12px;
+			margin-left:5px;
+		}
+
+		#chooseClassify{
+			height:150px;
+			width:1000px;
+			background:#F5F5F5;
+			margin:0 auto;
+			margin-top:20px;
+			padding-top:20px;
+		}
+
+		#attachInfo{
+			height:60px;
+			width:1000px;
+			background:#F5F5F5;
+			margin:0 auto;
+			margin-top:20px;
+			padding-top:20px;
+			margin-bottom:20px;
+		}
+
+		.blueButton{
+			background:#00549c;
+			color:white;
+			padding:4px 8px;
+			font-size:14px;
+			font-family:"Microsoft YaHei"; 
+		}
+
+			#icon1{
+				margin-left:20px;
+				float:left;
+			}
+
+		    #advancedSearch form{
+		    	padding:0px;
+		    	margin:0px;
+		    }
+
+		    #advancedSearch form input{
+				height:25px;
+				width:200px;
+			}
+
+			#advancedSearch form select{
+				height:25px;
+				width:180px;
+				margin-left:20px;
+			}
+
+			#searchInfo #label{
+				width:100px;
+				text-align:right;
+			}
+
+			table{
+				margin-left:20px;
+			}
+
+			tr{
+				height:40px;
+			}
+
+			table .label{
+				text-align:right;
+				font-size:14px;
+				font-family:"Microsoft YaHei";
+				width:100px; 
+			}
+
+			#add{
+			
+			}
+
+			#delete{
+				margin-left:10px;
+				padding-left:3px;
+				padding-left:3px;
+			}
+			.whiteButton{
+				padding-bottom:2px;
+				border:1px solid #BCBCBC;
+				background:#F0F0F0;
+				font-size:14px;
+				font-family:"Microsoft YaHei";
+
+    			-moz-box-shadow:2px 2px 0px #D3D3D3;
+    			-webkit-box-shadow:2px 2px 0px #D3D3D3;
+    			 box-shadow:2px 2px 0px #D3D3D3;
+			}
+
+			.hide{
+				display:none;
+			}
+
+			#submitButton{
+				-moz-border-radius:6px;
+   				-webkit-border-radius:6px;
+				*position:relative;
+				*top:-3px;
+				padding:4px 20px;
+			}
+
+			.deleteButton{
+				padding-left:2px;
+				padding-right:2px;
+				*position:relative;
+				*top:-3px;
+			}
+
+			#ui-datepicker-div
+			{
+				margin-left:20px;
+				font-size:80%;
+			}
+			#add{
+				*position:relative;
+				*top:-3px;
+			}
+		

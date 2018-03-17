@@ -1,0 +1,99 @@
+.table-select select {
+display: block-inline;
+height: 25px;
+width: 150px;
+margin-right: 10px;
+border: 1px #494949 solid;
+}
+
+
+/*================== content ===================*/
+#content{
+	margin:0 auto;
+	padding:10px 0;
+	width:1190px;
+	font-size: 12px;
+}
+
+#cMiddle{
+	width:1015px;
+	min-width:1015px;
+	margin:0 auto;
+	letter-spacing:2px;
+}
+
+#cHead{
+	height:47px;
+	background:#8c1616;
+	border-radius:10px;
+	line-height:47px;
+	padding:0 10px;
+	margin-bottom:15px;
+	box-shadow:2px 2px 2px 2px #666;
+}
+#cHead #fRight{
+	margin-left:640px;
+}
+#fRight a, #cHead{color:#fff;}
+
+/*================== searchInfo ===================*/
+#form #searchInfo,#form #typeOpt,#form #additionalInfo{
+	height:145px;
+	background:#f3f9fd;
+	border-radius:10px;
+	padding:10px;
+	margin-bottom:15px;
+	box-shadow:2px 1px 2px 2px #aaa;
+}
+#searchInfo span, #typeOpt span,#additionalInfo span{
+	float:left;
+	width:100px;
+	display:block;
+	height:30px;
+	line-height:30px;
+	text-align:center;
+	background:#8c1616;
+	color:white;
+	margin-top:10px;
+}
+
+#searchInfo div{
+	float:left;
+	margin:10px 0 0 20px;
+}
+#searchInfo p{margin-bottom:15px;}
+#searchInfo input[type='text']{
+	height:26px;
+	width:283px;
+	padding:0 5px;
+	border:1px solid #aaa;
+}
+#searchInfo label{width:70px;display:inline-block;}
+
+/**=============== typeOpt ==================*/
+
+#typeOpt p,#additionalInfo p{
+	float:left;
+	margin:40px 0 0 20px;
+}
+
+#typeOpt p select,#additionalInfo p select{
+	width:180px;
+	margin-right:20px;
+	border:1px solid #aaa;
+}
+
+#additionalInfo p select {
+	height: 25px;
+	width: 100px;
+}
+
+#form input[type='submit']{
+	width:100px;
+	height:40px;
+	line-height:40px;
+	background:#8c1616;
+	border-radius:10px;
+	color:#fff;
+}
+

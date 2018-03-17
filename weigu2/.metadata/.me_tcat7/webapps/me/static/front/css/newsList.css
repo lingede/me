@@ -1,0 +1,115 @@
+body {
+	background: #ecf0f1;
+	color: #494949;
+}
+
+/*==========content==========*/
+#content{
+	margin: 30px auto 0;
+	padding:10px 0;
+	width:1065px;
+	font-size: 12px;
+	overflow: hidden;
+}
+
+#newsList {
+	float: left;
+}
+
+#newsList h2 {
+	width: 175px;
+	margin-bottom: 15px;
+	text-align: center;
+	font-size: 18px;
+	font-weight: normal;
+}
+
+#newsList ul {
+	padding-top: 25px;
+	font-size: 14px;
+	background-color: #eb974e;
+	height: 580px;
+}
+
+#currentTitle a[href]{
+	background-color: #ecf0f1;
+	color: #eb974e;
+}
+#newsList a:hover {
+	background-color: #ecc4a0;
+	color: #ecf0f1;	
+}
+
+#newsList a {
+	display: block;
+	width: 175px;
+	padding: 10px 0;
+	text-align: center;
+	color: white;
+}
+
+/*================newsBox===============*/
+#newsBox {
+	float: right;
+}
+
+#newsBox p {
+	padding-top: 5px;
+	margin-bottom: 17px;
+	color: black
+}
+
+#newsBox a {
+	color: black;
+}
+
+#table {
+	width: 805px;
+	height: 490px;
+	padding: 30px 30px 20px;
+	background-color: white;
+}
+
+#table td {
+	padding: 6px 5px;
+}
+
+#newsBox td a {
+	font-size: 14px; 
+	color: #494949;
+}
+
+.title {
+	width: 690px;
+}
+
+/*================pagebar===============*/
+#pagebar {
+	width: 865px;
+	text-align: center;
+	background: white;
+	padding: 5px 0 20px;
+	height: 40px;
+}
+
+#pagebar span {
+	margin-right: 15px;
+}
+
+#pagebar a {
+	padding: 3px 8px;
+	line-height: 30px;
+	margin-right: 2px;
+	border: solid 1px #e7e7e7;
+	color: #494949;
+}
+
+#pagebar a:hover {
+	background-color: #eb974e;
+	color: white;
+}
+
+#pagebar #current{
+	background-color: #eb974e;
+	color: white;
+}

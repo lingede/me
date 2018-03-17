@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.me.dao.platform.ArticleMapper">
+
+	<!-- 通用查询结果列 -->
+	<sql id="Base_Column_List">
+		id, title, titleimg, content, createTime, author, email,
+		`source`, numOfRead
+	</sql>
+	<select id="selectBySercher" parameterType="SearchKeyVo"
+		resultType="Article">
+		SELECT
+		a.id, a.title, a.titleimg, DATE_FORMAT(a.createTime, '%Y-%m-%d') textTime,a.author,h.Category_id categoryId
+		FROM
+		article a,category_has_article h
+		<where>
+				and a.id=h.Article_id
+				and h.state=1 
+			<if test="keyword != null and keyword !=''">
+				AND (a.title LIKE '%' #{keyword} '%')
+			</if>
+			<if test="author != null and author !=''">
+				AND (a.author LIKE '%' #{author} '%')
+			</if>
+			<if test="categoryId != null and categoryId !=''">
+				AND h.Category_id=#{categoryId}
+			</if>
+			<if test="startTime != null and endTime != null and startTime !='' and endTime !=''">
+				AND a.createTime between #{startTime} and #{endTime}
+			</if>
+		</where>
+		order by a.createTime desc
+	</select>
+	
+	<!-- 根据栏目ID查询文章列表 -->
+	<select id="selectByCategoryId" resultType="com.me.vo.platform.ArticleListVO">
+		SELECT
+			a.id,
+			a.title,
+			a.createTime,
+			c.Category_id categoryId
+		FROM
+			category_has_article c,
+			article a,
+			category ca
+		WHERE
+			c.Article_id = a.id
+		AND c.Category_id = ca.id
+		AND c.state = 1
+		AND c.Category_id = #{categoryId}
+		AND c.isTop = #{isTop}
+		ORDER BY a.createTime DESC
+	</select>
+	
+	<!-- 根据文章ID和分类ID查询文章详细信息 -->
+	<select id="selectBycategoryAndArticle" resultType="com.me.vo.platform.ArticleViewVO">
+		SELECT
+			a.id,
+			a.title,
+			a.author,
+			a.source,
+			a.numOfRead,
+			a.createTime,
+			a.content,
+			a.titleimg
+		FROM
+			category_has_article c,
+			article a
+		WHERE
+			c.Article_id = a.id
+		AND c.Category_id = #{categoryId}
+		AND c.Article_id = #{articleId}
+	</select>
+	
+	<!-- 上一条文章信息 -->
+	<select id="selectnextid" resultType="java.lang.Integer">
+		SELECT
+			max(a.id)
+		FROM
+			article a,
+			category_has_article c
+		WHERE
+			a.id = c.Article_id
+		AND c.state=1
+		AND
+			c.Category_id = #{categoryId}
+		AND
+			a.id <![CDATA[<]]> #{articleId}
+		ORDER BY
+			a.id DESC
+		LIMIT 0,1
+	</select>
+	
+	<!-- 下一条文章信息 -->
+	<select id="selectpreid" resultType="java.lang.Integer">
+		SELECT
+			min(a.id)
+		FROM
+			article a,
+			category_has_article c
+		WHERE
+			a.id = c.Article_id
+		AND c.state=1
+		AND
+			c.Category_id = #{categoryId}
+		AND
+			a.id <![CDATA[>]]> #{articleId}
+		ORDER BY
+			a.id ASC
+		LIMIT 0,1
+	</select>
+	
+	<!-- 根据文章Id查询文章标题 -->
+	<select id="prenext" resultType="java.util.Map">
+		SELECT
+			a.id,
+			a.title,
+			b.Category_id categoryId
+		FROM
+			article a,
+			category_has_article b
+		WHERE
+			a.id = b.Article_id
+		AND b.state=1
+		AND b.Category_id=#{categoryId}
+		AND a.id = #{articleId}
+	</select>
+
+</mapper>

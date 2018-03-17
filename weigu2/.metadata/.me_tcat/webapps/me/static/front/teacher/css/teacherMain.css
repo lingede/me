@@ -1,0 +1,101 @@
+/*introduction*/
+#introduction {position: relative; color: #8c1616;}
+#introduction img{margin-right: 3px;}
+#introduction>img{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}
+#introduction>div {width: 885px; height: 310px; margin: 0 auto; position: relative;}
+#photo {
+	width: 150px;
+	height: 200px;
+	margin-top: 60px;
+}
+#name {
+	position: absolute;
+	font-size: 30px;
+	color: white;
+	top: 70px;
+	left: 210px;
+}
+#position {
+	position: absolute;
+	font-size: 16px;
+	color: white;
+	top: 139px;
+	left: 210px;
+	width: 280px;
+	height: 120px
+}
+#mail {
+	position: absolute;
+	font-size: 14px;
+	top: 70px;
+	left: 700px;
+}
+#mail img {
+	width: 18px;
+	height: 14px;
+}
+#phone {
+	position: absolute;
+	font-size: 16px;
+	top: 120px;
+	left: 700px;
+}
+#phone img {
+	width: 18px;
+	height: 14px;
+}
+#guide{
+	width: 888px;
+	margin: auto;
+	color: black;
+	font-size:12px;
+	margin-bottom:20px;
+}
+
+#guide a {
+	color: black;
+}
+
+/*content*/
+#content {
+	background-color: #cbd1d6;
+	padding: 20px 0;
+}
+
+#content>div {
+	width: 888px;
+	margin: auto;
+}
+
+#nav h2 {
+	float: left;
+	font-size: 16px;
+	width: 222px;
+	height: 30px;
+	cursor: pointer;
+	background-color: #cbd1d6;
+	padding-top: 10px;
+	text-align: center;
+}
+
+#nav .selected {
+	background-color: white;
+}
+
+#words {
+	min-height: 413px;
+	background-color: white;
+}
+
+#words div {
+	width: 788px;
+	min-height: 363px;
+	padding: 40px 50px 10px 50px;
+	text-indent: 24px;
+	font-size: 14px;
+}

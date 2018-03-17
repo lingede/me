@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<deployments>
+  <deployment alt-context-root="" context-root="/me" deployment-path="F:/java/weigu2/.metadata/.me_tcat/webapps/me" project-name="me" server-id="myeclipseTomcatServer" state="ERROR" status="Project modules hierarchy is inconsistent with deployment" type="WEB"/>
+  <deployment alt-context-root="" context-root="/me" deployment-path="F:/java/weigu2/.metadata/.me_tcat/webapps/me" project-name="me Maven Webapp" server-id="myeclipseTomcatServer" state="DEPLOYED" type="WEB"/>
+  <deployment context-root="/me" deployment-path="F:/java/weigu2/.metadata/.me_tcat7/webapps/me" project-name="me Maven Webapp" server-id="myeclipseTomcatServer7" state="DEPLOYED" type="WEB"/>
+</deployments>

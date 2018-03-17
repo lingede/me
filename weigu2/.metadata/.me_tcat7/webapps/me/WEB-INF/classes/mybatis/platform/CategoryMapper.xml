@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.me.dao.platform.CategoryMapper">
+
+	<!-- 通用查询结果列-->
+	<sql id="Base_Column_List">
+		id, Category_id AS categoryId, `name`, numOfPicNews, numOfTextNews, createTime, sortby, `type`, `enable`, issubmit
+	</sql>
+	
+	<!-- 查询enable为1的所有栏目(可根据栏目类型查询) -->
+	<select id="selectCategory" resultType="com.me.vo.platform.CategoryVO">
+		SELECT
+			c.id,
+			c.Category_id categoryId,
+			c.name,
+			c.isnavigation
+		FROM
+			category c
+		WHERE
+			c.enable=1
+		<if test="typeid != null">
+			AND c.type=#{typeid}
+		</if>
+		ORDER BY
+			c.sortby ASC
+	</select>
+	
+	<!-- 查询所有一级栏目 -->
+	<select id="selectCombobox" resultType="java.util.Map">
+		SELECT
+			c.id,
+			c.name
+		FROM
+			category c
+		WHERE
+			c.enable = 1
+		AND
+		  c.Category_id is NULL
+		ORDER BY
+			c.sortby ASC
+	</select>
+	
+	
+	
+</mapper>
